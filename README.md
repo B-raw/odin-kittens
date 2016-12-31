@@ -28,11 +28,22 @@ https://github.com/rest-client/rest-client
 Copied from The Odin Project:
 
 1. In IRB or Pry `require 'rest_client'` (you may need to `gem install rest_client` if you haven't already). [I had to shut down the server then restart it before this worked.]
-2. Test it is working by making a request to your application using  `response = RestClient.get("http://localhost:3000/kittens")` - the `response` object should be a string of html. If you check out your server output, it's probably processing as XML, e.g. "Processing by KittensController#index as XML"
-3. To get a JSON response, add the option :accept => :json, e.g. `RestClient.get("http://localhost:3000/kittens/1", :accept => :json)`. This now returns a string in JSON format.
-4. To view the object in proper JSON format, use `JSON.parse(response)`. This returns:
+
+2. Test it is working by making a request to your application using  
+```ruby
+response = RestClient.get("http://localhost:3000/kittens")
 ```
-=> {"id"=>1,
+The `response` object should be a string of html. If you check out your server output, it's probably processing as XML, e.g. "Processing by KittensController#index as XML"
+
+3. To get a JSON response, add the option :accept => :json, e.g.
+```ruby
+RestClient.get("http://localhost:3000/kittens/1", :accept => :json)
+```
+This now returns a string in JSON format.
+
+4. To view the object in proper format, use `JSON.parse(response)`. This returns:
+```ruby
+{"id"=>1,
  "name"=>"Bobbles The Kitten",
  "age"=>1,
  "cuteness"=>1,
@@ -44,14 +55,16 @@ Copied from The Odin Project:
 ### Javascript
 
 1. Open up a tab for `localhost:3000`
+
 2. In the console, you can use ajax to request JSON:
-```
+```javascript
 var data = $.ajax({
   url: "http://localhost:3000/kittens",
   type: "GET",
   dataType: "json",
 });
 ```
+
 3. The data object has an attribute called responseJSON which contains the JSON response from the server.
 
 ### To Do and further developments
