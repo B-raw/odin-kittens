@@ -36,34 +36,34 @@ response = RestClient.get("http://localhost:3000/kittens")
 The `response` object should be a string of html. If you check out your server output, it's probably processing as XML, e.g. "Processing by KittensController#index as XML"
 
 3. To get a JSON response, add the option :accept => :json, e.g.
-```ruby
-RestClient.get("http://localhost:3000/kittens/1", :accept => :json)
-```
+  ```ruby
+  RestClient.get("http://localhost:3000/kittens/1", :accept => :json)
+  ```
 This now returns a string in JSON format.
 
 4. To view the object in proper format, use `JSON.parse(response)`. This returns:
-```ruby
-{"id"=>1,
- "name"=>"Bobbles The Kitten",
- "age"=>1,
- "cuteness"=>1,
- "softness"=>1,
- "created_at"=>"2016-12-30T23:28:35.983Z",
- "updated_at"=>"2016-12-30T23:28:35.983Z"}
- ```
+  ```ruby
+  {"id"=>1,
+   "name"=>"Bobbles The Kitten",
+   "age"=>1,
+   "cuteness"=>1,
+   "softness"=>1,
+   "created_at"=>"2016-12-30T23:28:35.983Z",
+   "updated_at"=>"2016-12-30T23:28:35.983Z"}
+   ```
 
 ### Javascript
 
 1. Open up a tab for `localhost:3000`
 
 2. In the console, you can use ajax to request JSON:
-```javascript
-var data = $.ajax({
-  url: "http://localhost:3000/kittens",
-  type: "GET",
-  dataType: "json",
-});
-```
+  ```javascript
+  var data = $.ajax({
+    url: "http://localhost:3000/kittens",
+    type: "GET",
+    dataType: "json",
+  });
+  ```
 
 3. The data object has an attribute called responseJSON which contains the JSON response from the server.
 
