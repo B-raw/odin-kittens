@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+bubbles:
+  name: Bubbles
+  age: 3
+  cuteness: 4
+  softness: 9
+
+puss:
+  name: Puss
+  age: 2
+  cuteness: 8
+  softness: 6
