@@ -30,9 +30,9 @@ Copied from The Odin Project:
 1. In IRB or Pry `require 'rest_client'` (you may need to `gem install rest_client` if you haven't already). [I had to shut down the server then restart it before this worked.]
 
 2. Test it is working by making a request to your application using  
-```ruby
-response = RestClient.get("http://localhost:3000/kittens")
-```
+  ```ruby
+  response = RestClient.get("http://localhost:3000/kittens")
+  ```
 The `response` object should be a string of html. If you check out your server output, it's probably processing as XML, e.g. "Processing by KittensController#index as XML"
 
 3. To get a JSON response, add the option :accept => :json, e.g.
